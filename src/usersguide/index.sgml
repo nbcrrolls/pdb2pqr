@@ -1,0 +1,32 @@
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V3.1//EN" [
+	<!ENTITY % entities SYSTEM "entities.sgml">
+	%entities;
+	<!ENTITY preface    SYSTEM "preface.sgml">
+	<!ENTITY chapter-01 SYSTEM "requirements.sgml">
+	<!ENTITY chapter-02 SYSTEM "installing.sgml">
+	<!ENTITY chapter-03 SYSTEM "using.sgml">
+]>
+
+<book>
+<bookinfo>
+
+	<title> PDB2PQR Roll: Users Guide </title>
+	<edition>Version &document_version;</edition>
+	<pubdate>&document_pubdate;</pubdate>
+	<copyright id="copyright" xreflabel="copyright">
+		<year>&document_year;</year>
+		<holder>&document_copyright;</holder>
+	</copyright>
+
+	<releaseinfo>
+		<ulink url="roll-pdb2pqr-userguide.pdf">(PDF version)</ulink>
+	</releaseinfo>
+
+</bookinfo>
+
+&preface;
+&chapter-01;
+&chapter-02;
+&chapter-03;
+
+</book>

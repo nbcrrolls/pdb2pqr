@@ -1,0 +1,2 @@
+VERSION = 1.7
+RELEASE = 0

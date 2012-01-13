@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+
+<graph>
+
+        <description>
+
+        The PDB2PQR Roll
+
+        </description>
+
+        <copyright>
+        </copyright>
+
+        <changelog>
+
+        </changelog>
+
+        <edge from="server" to="pdb2pqr-server"/>
+        <edge from="client" to="pdb2pqr-client"/>
+
+        <order head="opal">
+                <tail>pdb2pqr-server</tail>
+        </order>
+
+</graph>

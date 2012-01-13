@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+        <description>
+        PDB2PQR
+        </description>
+
+        <copyright>
+        </copyright>
+
+        <changelog>
+
+        </changelog>
+
+        <package>pdb2pqr</package>
+        <package>pdb2pqr-opal</package>
+        <package>rocks-pdb2pqr</package>
+        <package>roll-pdb2pqr-usersguide</package>
+
+<post>
+
+ln -s /opt/pdb2pqr /var/www/html/pdb2pqr
+tempname="rollhost"
+realname=&Kickstart_PublicHostname;
+change_list=`grep -r -l $tempname /opt/pdb2pqr`
+
+for i in $change_list; do \
+  sed -i "s/$tempname/$realname/g" $i; \
+done
+
+<file name="/opt/opal/configs/deploy.sh" mode="append">
+pqb2pqr_bin=/opt/pdb2pqr/pdb2pqr.py
+if test -e $pdb2pqr_bin; then
+    ant -f $OPALXML deploy -DserviceName=pdb2pqr_1.7 -DappConfig=$OPALCONFIG/pdb2pqr_1.7_config.xml
+fi
+</file>
+
+/opt/opal/configs/deploy.sh
+
+</post>
+</kickstart>

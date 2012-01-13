@@ -1,0 +1,42 @@
+<chapter id="help" xreflabel="Using PDB2PQR">
+<title>Using PDB2PQR</title>
+
+<section id="using-roll" xreflabel="Using Roll">
+<title>Using PDB2PQR Roll</title>
+
+<para>
+Simply run PDB2PQR as a web service.  The PDB2PQR web server can be found at the following mirrors.
+</para>
+<itemizedlist>
+<listitem><para>
+<ulink url="http://agave.wustl.edu/pdb2pqr/index.html">Washington University in St. Louis.</ulink>
+</para></listitem>
+<listitem><para>
+<ulink url="http://nbcr.net/pdb2pqr">NBCR (UCSD).</ulink>
+</para></listitem>
+</itemizedlist>
+
+<para>
+For questions related to obtaining or installing PDB2PQR Roll please:
+</para>
+<itemizedlist>
+<listitem><para>Send an email to NBCR Support <email>support@nbcr.net</email>.</para></listitem>
+<listitem><para>Visit the <ulink url="http://nbcr.net/forum">Rock'n Rolls section on NBCR Forum</ulink>.</para></listitem>
+</itemizedlist>
+
+<para>
+For questions about using PDB2PQR software please:
+</para>
+<itemizedlist>
+<listitem><para>
+Send an email to <ulink url="http://pdb2pqr.sourceforge.net/#mailing">PDB2PQR mailing lists</ulink>.
+</para></listitem>
+<listitem><para>
+Check out the official <ulink url="http://pdb2pqr.sourceforge.net/">PDB2PQR Sourceforge page</ulink>.
+</para></listitem>
+</itemizedlist>
+
+</section>
+
+</chapter>
+

@@ -1,0 +1,14 @@
+<preface id="preface" xreflabel="preface">
+<title>Preface</title>
+
+<para>
+Please visit the <ulink url="http://pdb2pqr.sourceforge.net/">
+official PDB2PQR site</ulink> to learn more about it.
+</para>
+
+<para>
+The pdb2pqr roll will install pdb2pqr v 1.6 distribution in /opt/pdb2pqr. 
+The web access is provided via a link <filename>/var/www/html/pdb2pqr</filename>.
+</para>
+
+</preface>

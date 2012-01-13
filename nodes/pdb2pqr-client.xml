@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+        <description>
+        PDB2PQR
+        </description>
+
+        <copyright>
+        </copyright>
+
+        <changelog>
+
+        </changelog>
+
+        <package>pdb2pqr</package>
+        <package>rocks-pdb2pqr</package>
+
+</kickstart>

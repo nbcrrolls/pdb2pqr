@@ -1,0 +1,43 @@
+<chapter id="installing" xreflabel="Installing">
+<title>Installing pdb2pqr</title>
+
+&source_roll-installing-standard;
+
+<section id="installing-running-server" xreflabel="On an existing server">
+<title>Adding Roll to the existing server</title>
+<para>
+The pdb2pqr Roll can be added to an existing server (or frontend). 
+Assume that you have an ISO image of the roll called pdb2pqr.iso. 
+The following procedure will install the Roll:
+<screen>
+# rocks add roll pdb2pqr.iso
+# rocks enable roll pdb2pqr
+# cd /export/rocks/install
+# rocks create distro
+# rocks run roll pdb2pqr | /bin/sh
+</screen>
+</para>
+</section>
+
+<section id="installing-nodes" xreflabel="Adding the Roll to Nodes">
+<title>Adding the Roll to Nodes</title>
+
+<para>
+To add the the Service Pack Roll to the nodes of your cluster, you'll
+need to reinstall the nodes.
+</para>
+
+<para>
+To reinstall all your nodes, as root execute:
+</para>
+
+<para>
+<screen>
+# rocks set host compute boot action=install
+# rocks run host compute command=reboot
+</screen>
+</para>
+
+</section>
+
+</chapter>
