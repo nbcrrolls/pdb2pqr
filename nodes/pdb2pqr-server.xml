@@ -32,11 +32,15 @@ done
 <file name="/opt/opal/configs/deploy.sh" mode="append">
 pqb2pqr_bin=/opt/pdb2pqr/pdb2pqr.py
 if test -e $pdb2pqr_bin; then
-    ant -f $OPALXML deploy -DserviceName=pdb2pqr_1.7 -DappConfig=$OPALCONFIG/pdb2pqr_1.7_config.xml
+    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_1.7 -DappConfig=$OPALCONFIG/pdb2pqr_1.7_config.xml
 fi
 </file>
 
-/opt/opal/configs/deploy.sh
+export JAVA_HOME=/usr/java/latest
+export PATH=$JAVA_HOME/bin:$PATH
+export CATALINA_HOME=/opt/tomcat
+#takes a little longer in this way but less code to write
+/bin/su tomcat -c "/opt/opal/configs/deploy.sh"
 
 </post>
 </kickstart>
