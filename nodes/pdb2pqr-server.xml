@@ -44,7 +44,7 @@ fi
     export PATH=$JAVA_HOME/bin:$PATH
     export CATALINA_HOME=/opt/tomcat
     #takes a little longer in this way but less code to write
-    /bin/su tomcat -c "/opt/opal/configs/deploy.sh"
+    /bin/su tomcat -c "/opt/opal/deployed/deploy.sh"
 
 fi
 
