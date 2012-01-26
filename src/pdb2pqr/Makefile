@@ -68,20 +68,25 @@ version.mk:
 build:
 	tar zxvf $(NAME)-$(VERSION).tar.gz
 	cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../
-	(                                                                             \
-		cd $(NAME)-$(VERSION);                                  \
-	       	./configure --prefix=$(PKGROOT) --with-url=http://rollhost/pdb2pqr/ ; \
-		$(MAKE);                                                              \
+	(                                                       \
+		cd $(NAME)-$(VERSION);                          \
+		./configure --prefix=$(PKGROOT)	                \
+        		--enable-pdb2pka                        \
+			--with-python=/opt/python/bin/python2.7 \
+			--with-url=http://rollhost/pdb2pqr/ ;   \
+		$(MAKE);                                        \
+		$(MAKE) test;                                   \
+		$(MAKE) adv-test;                               \
         )
+
 
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
-	(                                                                             \
-		cd $(NAME)-$(VERSION);                                                \
-        	$(MAKE) PREFIX=$(ROOT)/$(PKGROOT) install;                            \
+	(                                                       \
+		cd $(NAME)-$(VERSION);                          \
+		$(MAKE) PREFIX=$(ROOT)/$(PKGROOT) install;      \
 	)
 
 
 clean::
 	rm -rf $(NAME)-$(VERSION)
-	rm -rf version.mk
