@@ -33,7 +33,7 @@ if [ -d /opt/opal ]; then
     #ok we have opal installed
     #let's deploy the 
 
-<file name="/opt/opal/configs/deploy.sh" mode="append">
+<file name="/opt/opal/deployed/deploy.sh" mode="append">
 pdb2pqrver=1.8
 pqb2pqr_bin=/opt/pdb2pqr/pdb2pqr.py
 if test -e $pdb2pqr_bin; then
