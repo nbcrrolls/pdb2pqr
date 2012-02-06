@@ -90,3 +90,4 @@ install::
 
 clean::
 	rm -rf $(NAME)-$(VERSION)
+	rm -rf version.mk
