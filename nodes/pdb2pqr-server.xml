@@ -35,9 +35,9 @@ if [ -d /opt/opal ]; then
 
 <file name="/opt/opal/deployed/deploy.sh" mode="append">
 pdb2pqrver=1.8
-pqb2pqr_bin=/opt/pdb2pqr/pdb2pqr.py
-if test -e $pdb2pqr_bin; then
-    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_${pdb2pqrver} -DappConfig=$OPALCONFIG/pdb2pqr_${pdb2pqrver}_config.xml
+pqb2pqr_script=/opt/pdb2pqr/pdb2pqr.py
+if test -e $pdb2pqr_script; then
+    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_${pdb2pqrver} -DappConfig=$OPALCONFIG/pdb2pqr_$pdb2pqrver.xml
 fi
 </file>
 
