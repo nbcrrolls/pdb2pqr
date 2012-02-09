@@ -1,10 +1,6 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V3.1//EN" [
 	<!ENTITY % entities SYSTEM "entities.sgml">
 	%entities;
-	<!ENTITY preface    SYSTEM "preface.sgml">
-	<!ENTITY chapter-01 SYSTEM "requirements.sgml">
-	<!ENTITY chapter-02 SYSTEM "installing.sgml">
-	<!ENTITY chapter-03 SYSTEM "using.sgml">
 ]>
 
 <book>
@@ -24,9 +20,9 @@
 
 </bookinfo>
 
-&preface;
-&chapter-01;
-&chapter-02;
-&chapter-03;
+&source-preface;
+&source-requirements;
+&source-installing;
+&source-using;
 
 </book>
