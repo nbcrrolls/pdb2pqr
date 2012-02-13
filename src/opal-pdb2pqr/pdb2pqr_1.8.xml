@@ -435,6 +435,5 @@ Options:
   </metadata>
 
   <binaryLocation>/share/apps/pdb2pqr/pdb2pqr.py</binaryLocation>
- <drmaaQueue>si</drmaaQueue> 
    <parallel>false</parallel>
 </appConfig>
