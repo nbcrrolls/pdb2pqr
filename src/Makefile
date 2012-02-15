@@ -61,5 +61,7 @@ default:	rpm
 
 copyright rpm clean::
 	for i in $(SRCDIRS) ; do \
-		(cd $$i; make $@) ; \
+		cd $$i; \
+		$(MAKE) $@ || exit 2 ; \
+		cd ..; \
 	done
