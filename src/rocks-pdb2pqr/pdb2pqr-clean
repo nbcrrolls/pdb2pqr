@@ -8,12 +8,12 @@ jobsDir=/var/tmp/pdb2pqr/tmp
 echo "Removing pdb2pqr jobs directories older then $n days from $jobsDir"
 
 cd $jobsDir/
-Dirs=`find . -type d -mtime +$n -maxdepth 1 -name '1*' -print`
+Dirs=`find . -maxdepth 1 -type d -mtime +$n -name '1*' -print`
 for i in $Dirs; do
   rm -rf $i
 done
 
-Files=`find . -type f -mtime +$n -maxdepth 1 -name '*.html' -print`
+Files=`find . -maxdepth 1 -type f -mtime +$n -name '*.html' -print`
 for i in $Files; do
   rm -rf $i
 done
