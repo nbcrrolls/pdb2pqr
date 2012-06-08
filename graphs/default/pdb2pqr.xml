@@ -18,8 +18,10 @@
         <edge from="server" to="pdb2pqr-server"/>
         <edge from="client" to="pdb2pqr-client"/>
 
-        <order head="opal">
-                <tail>pdb2pqr-server</tail>
+        <edge from="client" to="pdb2pqr-opal" cond="opal-server"/>
+
+        <order head="opal-common">
+                <tail>pdb2pqr-opal</tail>
         </order>
 
 </graph>

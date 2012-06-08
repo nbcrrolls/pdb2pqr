@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+        <description>
+        PDB2PQR
+        </description>
+
+        <copyright>
+        </copyright>
+
+        <changelog>
+
+        </changelog>
+
+        <package>pdb2pqr-opal</package>
+
+<post>
+
+
+if [ -d /opt/opal ]; then
+    #ok we have opal installed
+    #let's deploy the 
+
+<file name="/opt/opal/deployed/deploy.sh" mode="append">
+pdb2pqrver=1.8
+pqb2pqr_script=/opt/pdb2pqr/pdb2pqr.py
+if test -e $pdb2pqr_script; then
+    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_${pdb2pqrver} -DappConfig=$OPALCONFIG/pdb2pqr_$pdb2pqrver.xml
+fi
+</file>
+
+    export JAVA_HOME=/usr/java/latest
+    export PATH=$JAVA_HOME/bin:$PATH
+    export CATALINA_HOME=/opt/tomcat
+    #takes a little longer in this way but less code to write
+    /bin/su tomcat -c "/opt/opal/deployed/deploy.sh"
+
+fi
+
+</post>
+</kickstart>
+
