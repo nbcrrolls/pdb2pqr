@@ -18,7 +18,9 @@
         <edge from="server" to="pdb2pqr-server"/>
         <edge from="client" to="pdb2pqr-client"/>
 
-        <edge from="client" to="pdb2pqr-opal" cond="opal-server"/>
+	<!-- opal deployment -->
+        <edge from="client" to="pdb2pqr-opal" cond="opal_server"/>
+        <edge from="server" to="pdb2pqr-opal"/>
 
         <order head="opal-common">
                 <tail>pdb2pqr-opal</tail>
