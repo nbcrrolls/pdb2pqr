@@ -16,7 +16,8 @@
         </changelog>
 
         <edge from="server" to="pdb2pqr-server"/>
-        <edge from="client" to="pdb2pqr-client"/>
+        <edge from="server" to="pdb2pqr-common"/>
+        <edge from="client" to="pdb2pqr-common"/>
 
 	<!-- opal deployment -->
         <edge from="client" to="pdb2pqr-opal" cond="opal_server"/>
