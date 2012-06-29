@@ -1,1 +1,2 @@
-NAME    = pdb2pqr
+NAME = pdb2pqr
+APBS = 1.3
