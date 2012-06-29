@@ -25,9 +25,6 @@ if test -e $pdb2pqr_script; then
     $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_PDB2PQRVER -DappConfig=$OPALCONFIG/pdb2pqr_PDB2PQRVER.xml
 fi
 </file>
-cd /opt/opal
-su tomcat -c "ant deploy -DserviceName=pdb2pqr_PDB2PQRVER -DappConfig=/opt/opal/deployed/pdb2pqr_PDB2PQRVER.xml"
-
 fi
 
 </post>
