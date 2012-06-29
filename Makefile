@@ -5,4 +5,11 @@
 -include $(ROLLSROOT)/etc/Rolls.mk
 include Rolls.mk
 
-default: roll
+default: 
+	for i in `ls nodes/*.xml.in`; do \
+	    export o=`echo $$i | sed 's/\.in//'`; \
+	    cp $$i $$o; \
+	    sed -i "s/PDB2PQRVER/1.8/g" $$o; \
+	done
+	$(MAKE) roll
+

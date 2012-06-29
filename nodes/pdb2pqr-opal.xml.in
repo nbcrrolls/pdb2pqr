@@ -19,16 +19,14 @@
 
 
 if [ -d /opt/opal ]; then
-    #ok we have opal installed
-    #let's deploy the 
-
 <file name="/opt/opal/deployed/deploy.sh" mode="append">
-pdb2pqrver=1.8
-pqb2pqr_script=/opt/pdb2pqr/pdb2pqr.py
+pqb2pqr_script=/opt/pdb2pqr_PDB2PQRVER/pdb2pqr.py
 if test -e $pdb2pqr_script; then
-    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_${pdb2pqrver} -DappConfig=$OPALCONFIG/pdb2pqr_$pdb2pqrver.xml
+    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_PDB2PQRVER -DappConfig=$OPALCONFIG/pdb2pqr_PDB2PQRVER.xml
 fi
 </file>
+cd /opt/opal
+su tomcat -c "ant deploy -DserviceName=pdb2pqr_PDB2PQRVER -DappConfig=/opt/opal/deployed/pdb2pqr_PDB2PQRVER.xml"
 
 fi
 
