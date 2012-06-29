@@ -63,7 +63,7 @@ install::
 	mkdir -p $(ROOT)/etc/profile.d
 	$(INSTALL) -m755  pdb2pqr.*sh  $(ROOT)/etc/profile.d
 	mkdir -p $(ROOT)/etc/cron.daily 
-	$(INSTALL) -m755  pdb2pqr-clean $(ROOT)/etc/cron.daily
+	$(INSTALL) -m755  pdb2pqr-job-cleanup $(ROOT)/etc/cron.daily
 	mkdir -p $(ROOT)/var/tmp/pdb2pqr/tmp
 	chmod 777 $(ROOT)/var/tmp/pdb2pqr/tmp
 
