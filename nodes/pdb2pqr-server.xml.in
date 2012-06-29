@@ -36,11 +36,14 @@ fi
 tempname="rollhost"
 realname=&Kickstart_PublicHostname;
 change_list=`grep -r -l $tempname /opt/pdb2pqr_PDB2PQRVER`
-
 for i in $change_list; do \
   sed -i "s/$tempname/$realname/g" $i; \
 done
 
+change_list2=`grep -r -l $tempname /var/www/html/roll-documentation/pdb2pqr`
+for i in $change_list2; do \
+  sed -i "s/$tempname/$realname/g" $i; \
+done
 
 </post>
 </kickstart>
