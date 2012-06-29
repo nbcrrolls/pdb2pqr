@@ -20,8 +20,13 @@
 if [ -e /var/www/html/pdb2pqr ] ; then
    rm -rf /var/www/html/pdb2pqr
 fi
-
 ln -s /opt/pdb2pqr_PDB2PQRVER /var/www/html/pdb2pqr
+
+if [ -e /opt/pdb2pqr ] ; then
+   rm -rf /opt/pdb2pqr
+fi
+ln -s /opt/pdb2pqr_PDB2PQRVER /opt/pdb2pqr
+
 
 if [ ! -d /var/tmp/pdb2pqr/tmp ]; then
     mkdir -p /var/tmp/pdb2pqr/tmp
