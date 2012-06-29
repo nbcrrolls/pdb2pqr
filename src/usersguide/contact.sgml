@@ -1,0 +1,20 @@
+<chapter id="contact" xreflabel="Getting Help">
+<title>Getting Help</title>
+
+<para>
+For questions related to obtaining or installing PDB2PQR Roll please send an email to NBCR Support <email>admin@nbcr.net</email>.
+</para>
+
+<para>
+For questions about using PDB2PQR software please:
+</para>
+<itemizedlist>
+<listitem><para>
+Send an email to <ulink url="http://pdb2pqr.sourceforge.net/#mailing">PDB2PQR mailing lists</ulink>.
+</para></listitem>
+<listitem><para>
+Check out the official <ulink url="http://pdb2pqr.sourceforge.net/">PDB2PQR Sourceforge page</ulink>.
+</para></listitem>
+</itemizedlist>
+
+</chapter>

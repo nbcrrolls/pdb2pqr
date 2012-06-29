@@ -1,34 +1,23 @@
 <chapter id="requirements" xreflabel="Requirements">
 <title>Requirements</title>
 
-<section id="rocks-version" xreflabel="Rocks Version">
-<title>Rocks Version</title>
-
 <para>
-
-The PDB2PQR Roll is for use with Rocks version &document-version;.
-
+The PDB2PQR roll is for use with Rocks &document-version;.
 </para>
 
-</section>
-
-<section id="other-rolls" xreflabel="Other Rolls">
-<title>Other Rolls</title>
-
 <para>
-
-The PDB2PQR Roll is does not require any other Rolls.
-
-Compatiblity has been verified with the following rolls:
-
+You must install the following rolls before installing the PDB2PQR roll:
 </para>
 
 <itemizedlist>
-
-<listitem><para>Opal</para></listitem>
-
+<listitem><para>
+Opal (NOTE: the opal roll requires a reboot)
+</para></listitem>
 </itemizedlist>
 
-</section>
+<para>
+You need to install the APBS roll if you want to enable your users to run APBS with PDB2PQR results. 
+APBS roll is available from <ulink  url="http://www.poissonboltzmann.org/apbs/downloads">APBS web site</ulink>
+</para>
 
 </chapter>
