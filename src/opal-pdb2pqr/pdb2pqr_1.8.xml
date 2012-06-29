@@ -434,6 +434,6 @@ Options:
 
   </metadata>
 
-  <binaryLocation>/opt/pdb2pqr/pdb2pqr.py</binaryLocation>
+  <binaryLocation>/opt/pdb2pqr_1.8/pdb2pqr.py</binaryLocation>
    <parallel>false</parallel>
 </appConfig>
