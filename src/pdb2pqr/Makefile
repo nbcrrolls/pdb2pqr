@@ -90,6 +90,8 @@ install::
 		cd $(NAME)-$(VERSION);                          \
 		$(MAKE) PREFIX=$(ROOT)/$(PKGROOT) install;      \
 	)
+	mkdir -p $(ROOT)/etc/httpd/conf.d
+	install -m 644 pdb2pqr.conf $(ROOT)/etc/httpd/conf.d
 
 
 clean::
