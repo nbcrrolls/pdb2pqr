@@ -68,6 +68,7 @@ version.mk:
 build:
 	tar zxvf $(NAME)-$(VERSION).tar.gz
 	cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../
+	patch -p0 < patch
 	(                                                       \
 		cd $(NAME)-$(VERSION);                          \
 		./configure --prefix=$(PKGROOT)	                \
