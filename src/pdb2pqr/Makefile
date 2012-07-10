@@ -73,7 +73,7 @@ build:
 		cd $(NAME)-$(VERSION);                          \
 		./configure --prefix=$(PKGROOT)	                \
         		--enable-pdb2pka                        \
-			--with-python=/opt/python/bin/python2.7 \
+			--with-python=/opt/rocks/bin/python2.6 \
 			--with-url=http://rollhost/pdb2pqr/ \
 			--with-opal=http://rollhost/opal2/services/pdb2pqr_$(VERSION) \
 			--with-apbs=/opt/apbs/bin/apbs \
@@ -82,6 +82,14 @@ build:
 		$(MAKE) test;                                   \
 		$(MAKE) adv-test;                               \
         )
+	#needs to install ZSI
+	(                                                               \
+		cd $(NAME)-$(VERSION)/contrib/ZSI-2.1-a1/;              \
+		$(PY.PATH) setup.py build;                              \
+	)
+        
+
+
 
 
 install::
@@ -90,6 +98,12 @@ install::
 		cd $(NAME)-$(VERSION);                          \
 		$(MAKE) PREFIX=$(ROOT)/$(PKGROOT) install;      \
 	)
+	#Need to install zsi
+	(                                                               \
+		cd $(NAME)-$(VERSION)/contrib/ZSI-2.1-a1/;              \
+		$(PY.PATH) setup.py install --root=$(ROOT);             \
+	)
+	#this is for web form
 	mkdir -p $(ROOT)/etc/httpd/conf.d
 	install -m 644 pdb2pqr.conf $(ROOT)/etc/httpd/conf.d
 

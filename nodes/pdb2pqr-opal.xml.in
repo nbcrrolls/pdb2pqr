@@ -37,10 +37,15 @@ if [ ! -d /var/tmp/pdb2pqr/tmp ]; then
         fi
 
 tempname="rollhost"
-realname=&Kickstart_PublicHostname;
-change_list=`grep -r -l $tempname /opt/pdb2pqr_PDB2PQRVER`
+SERVER_NAME="&opal_public_fqdn;"
+if [ "$SERVER_NAME" == "" ] ; then
+        #if this is a frontend installation the
+        #opal_public_fqdn is not set yet
+        SERVER_NAME="&Kickstart_PublicHostname;"
+fi
+change_list=`grep -r -l $tempname /opt/pdb2pqr_1.8`
 for i in $change_list; do \
-  sed -i "s/$tempname/$realname/g" $i; \
+  sed -i "s/$tempname/$SERVER_NAME/g" $i; \
 done
 
 
