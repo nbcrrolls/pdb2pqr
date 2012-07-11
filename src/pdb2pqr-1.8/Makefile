@@ -73,7 +73,7 @@ build:
 		./configure --prefix=$(PKGROOT)	                \
         		--enable-pdb2pka                        \
 			--with-python=$(PYTHONROLL)             \
-			--with-url=http://rollhost/pdb2pqr/ \
+			--with-url=http://rollhost/pdb2pqr_$(VERSION)/ \
 			--with-opal=http://rollhost/opal2/services/pdb2pqr_$(VERSION) \
 			--with-apbs=/opt/apbs/bin/apbs \
 			--with-apbs-opal=http://rollhost/opal2/services/apbs_$(APBS); \
