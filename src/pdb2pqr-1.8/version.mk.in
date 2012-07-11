@@ -1,3 +1,4 @@
-NAME = pdb2pqr
+PACKAGENAME = pdb2pqr
+NAME = pdb2pqr18
 VERSION = 1.8
 APBS = 1.3

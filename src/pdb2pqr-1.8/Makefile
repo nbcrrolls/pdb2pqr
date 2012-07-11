@@ -65,11 +65,11 @@ version.mk:
 	cat version.mk.in ../version.mk > version.mk
 
 build:
-	tar zxvf $(NAME)-$(VERSION).tar.gz
+	tar zxvf $(PACKAGENAME)-$(VERSION).tar.gz
 	cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../
 	patch -p0 < patch
 	(                                                       \
-		cd $(NAME)-$(VERSION);                          \
+		cd $(PACKAGENAME)-$(VERSION);                          \
 		./configure --prefix=$(PKGROOT)	                \
         		--enable-pdb2pka                        \
 			--with-python=$(PYTHONROLL)             \
@@ -85,10 +85,10 @@ build:
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
 	(                                                       \
-		cd $(NAME)-$(VERSION);                          \
+		cd $(PACKAGENAME)-$(VERSION);                          \
 		$(MAKE) PREFIX=$(ROOT)/$(PKGROOT) install;      \
 	)
 
 clean::
-	rm -rf $(NAME)-$(VERSION)
+	rm -rf $(PACKAGENAME)-$(VERSION)
 	rm -rf version.mk
