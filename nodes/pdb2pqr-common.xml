@@ -13,7 +13,8 @@
 
         </changelog>
 
-        <package>pdb2pqr</package>
+        <package>pdb2pqr17</package>
+        <package>pdb2pqr18</package>
         <package>rocks-pdb2pqr</package>
 
 </kickstart>
