@@ -11,9 +11,29 @@ You must install the following rolls before installing the PDB2PQR roll:
 
 <itemizedlist>
 <listitem><para>
-Opal (NOTE: the opal roll requires a reboot)
+python roll is required
+</para></listitem>
+<listitem><para>
+Opal (is required only for web submission).
 </para></listitem>
 </itemizedlist>
+
+<para>
+This roll provides:
+</para>
+
+<itemizedlist>
+<listitem><para>
+pdb2pqr 1.7.1a
+</para></listitem>
+<listitem><para>
+pdb2pqr 1.8
+</para></listitem>
+<listitem><para>
+ZSI 2.1 a1 
+</para></listitem>
+</itemizedlist>
+
 
 <para>
 You need to install the APBS roll if you want to enable your users to run APBS with PDB2PQR results. 
