@@ -1,10 +1,13 @@
 #
-# $Id: Makefile,v 1.4 2012/02/09 01:21:17 nadya Exp $
+# $Id: Makefile,v 1.5 2012/07/11 00:29:42 clem Exp $
 #
 # @Copyright@
 # @Copyright@
 #
 # $Log: Makefile,v $
+# Revision 1.5  2012/07/11 00:29:42  clem
+# adding pdb2pqr 1.7.1 as requested by nathan baker [commit 1]
+#
 # Revision 1.4  2012/02/09 01:21:17  nadya
 # keep config file name consistent
 #
@@ -25,7 +28,12 @@ build::
 
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
-	$(INSTALL)  -m 0644  pdb2pqr_$(VERSION).xml $(ROOT)/$(PKGROOT)
+	$(INSTALL) -m 0644 pdb2pqr_1.8.xml $(ROOT)/$(PKGROOT)
+	$(INSTALL) -m 0644 pdb2pqr_1.7.1a.xml $(ROOT)/$(PKGROOT)
+	#need this for apache cgi setup
+	mkdir -p $(ROOT)/etc/httpd/conf.d
+	install -m 644 pdb2pqr.conf $(ROOT)/etc/httpd/conf.d
+
 
 clean::
 	rm -rf version.mk

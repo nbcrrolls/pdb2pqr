@@ -240,7 +240,7 @@ Usage: pdb2pqr.py [options] --ff=<forcefield> <path> <output-path>
   </metadata>
 
   <!-- location of execution on the server -->
-  <binaryLocation>/opt/pdb2pqr/pdb2pqr.py</binaryLocation>
+  <binaryLocation>/opt/pdb2pqr_1.7.1a/pdb2pqr.py</binaryLocation>
   
   <!-- list of default arguments -->
   <defaultArgs>--verbose</defaultArgs>
