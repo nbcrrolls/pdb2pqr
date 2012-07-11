@@ -14,28 +14,48 @@
         </changelog>
 
         <package>pdb2pqr-opal</package>
+        <package>zsi</package>
 
 <post>
 
 
 
-#fix pdb2pqr web site
+#
+# fix pdb2pqr web site directories
+#
 if [ -e /var/www/html/pdb2pqr ] ; then
    rm -rf /var/www/html/pdb2pqr
-   fi
-   ln -s /opt/pdb2pqr_PDB2PQRVER /var/www/html/pdb2pqr
+fi
+mkdir -p /var/www/html/pdb2pqr
+<file name="/var/www/html/pdb2pqr/index.html" vars="expanded">
+<![CDATA[
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Your Page Title</title>
+<meta http-equiv="REFRESH" content="0;url=/pdb2pqr-PDB2PQRVER/"></HEAD>
+<BODY>
+Redirecting to latest pdb2pqr 1.8...
+</BODY>
+</HTML>
+]]>
+</file>
+
 
 if [ -e /opt/pdb2pqr ] ; then
    rm -rf /opt/pdb2pqr
-   fi
-   ln -s /opt/pdb2pqr_PDB2PQRVER /opt/pdb2pqr
+fi
+ln -s /opt/pdb2pqr_PDB2PQRVER/opt/pdb2pqr
 
 
 if [ ! -d /var/tmp/pdb2pqr/tmp ]; then
     mkdir -p /var/tmp/pdb2pqr/tmp
-        chmod 777 /var/tmp/pdb2pqr/tmp
-        fi
+    chmod 777 /var/tmp/pdb2pqr/tmp
+fi
 
+#
+# fix the hostname
+#
 tempname="rollhost"
 SERVER_NAME="&opal_public_fqdn;"
 if [ "$SERVER_NAME" == "" ] ; then
@@ -43,19 +63,32 @@ if [ "$SERVER_NAME" == "" ] ; then
         #opal_public_fqdn is not set yet
         SERVER_NAME="&Kickstart_PublicHostname;"
 fi
-change_list=`grep -r -l $tempname /opt/pdb2pqr_1.8`
+change_list=`grep -r -l $tempname /opt/pdb2pqr_*`
 for i in $change_list; do \
   sed -i "s/$tempname/$SERVER_NAME/g" $i; \
 done
 
 
-#deploy services
+#
+# deploy opal services
+#
 if [ -d /opt/opal ]; then
 <file name="/opt/opal/deployed/deploy.sh" mode="append">
-pqb2pqr_script=/opt/pdb2pqr_PDB2PQRVER/pdb2pqr.py
+#
+# pdb2pqr
+#
+VERSION=1.8
+pqb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
 if test -e $pdb2pqr_script; then
-    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_PDB2PQRVER -DappConfig=$OPALCONFIG/pdb2pqr_PDB2PQRVER.xml
+    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
 fi
+
+VERSION=1.7.1a
+pqb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
+if test -e $pdb2pqr_script; then
+    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
+fi
+
 </file>
 fi
 
