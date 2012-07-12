@@ -1,6 +1,6 @@
 diff -rupN pdb2pqr-1.8/html/server.html.in pdb2pqr-fix/html/server.html.in
 --- pdb2pqr-1.8/html/server.html.in	2012-01-24 11:50:49.000000000 -0800
-+++ pdb2pqr-fix/html/server.html.in	2012-07-09 17:26:21.889212524 -0700
++++ pdb2pqr-fix/html/server.html.in	2012-07-12 11:23:44.175443285 -0700
 @@ -34,7 +34,7 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
  -->
  <head> 
@@ -19,3 +19,16 @@ diff -rupN pdb2pqr-1.8/html/server.html.in pdb2pqr-fix/html/server.html.in
  
  Please enter either:
  <blockquote>
+diff -rupN pdb2pqr-1.8/main.py pdb2pqr-fix/main.py
+--- pdb2pqr-1.8/main.py	2012-01-24 11:15:10.000000000 -0800
++++ pdb2pqr-fix/main.py	2012-07-12 11:29:01.485065794 -0700
+@@ -393,7 +393,8 @@ def runPDB2PQR(pdblist, ff,
+     # Process the extensions
+     for ext in selectedExtensions:
+         module = extensions.extDict[ext]
+-        tempRoutines = copy.deepcopy(myRoutines)
++        #this does not work for big molecule
++        #tempRoutines = copy.deepcopy(myRoutines)
+         module.run_extension(tempRoutines, outroot, extensionOptions)
+ 
+     if verbose:
