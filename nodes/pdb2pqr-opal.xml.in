@@ -33,7 +33,7 @@ mkdir -p /var/www/html/pdb2pqr
 <html>
 <head>
 <title>Your Page Title</title>
-<meta http-equiv="REFRESH" content="0;url=/pdb2pqr-PDB2PQRVER/"></HEAD>
+<meta http-equiv="REFRESH" content="0;url=/pdb2pqr_PDB2PQRVER/"></HEAD>
 <BODY>
 Redirecting to latest pdb2pqr 1.8...
 </BODY>
