@@ -84,12 +84,17 @@ install::
 	#needs this to avoid user prompt during install
 	rm -f /var/www/html/pdb2pqr_1.7.1a
 	(                                                       \
-		cd $(PACKAGENAME)-$(VERSION);                          \
-		$(MAKE) PREFIX=$(ROOT)/$(PKGROOT) install;      \
+		mount --bind $(ROOT)/$(PKGROOT) $(PKGROOT);      \
+		cd $(PACKAGENAME)-$(VERSION);                   \
+		$(MAKE)  install;                               \
+		umount $(PKGROOT)                               \
 	)
 	#link for apache html files
 	mkdir -p $(ROOT)/var/www/html
 	ln -s $(PKGROOT) $(ROOT)/var/www/html/pdb2pqr_$(VERSION)
+	echo dir is...
+	ls $(ROOT)/$(PKGROOT)
+	find $(ROOT)/$(PKGROOT)
 
 clean::
 	rm -rf $(PACKAGENAME)-$(VERSION)
