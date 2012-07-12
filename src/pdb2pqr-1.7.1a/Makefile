@@ -92,9 +92,6 @@ install::
 	#link for apache html files
 	mkdir -p $(ROOT)/var/www/html
 	ln -s $(PKGROOT) $(ROOT)/var/www/html/pdb2pqr_$(VERSION)
-	echo dir is...
-	ls $(ROOT)/$(PKGROOT)
-	find $(ROOT)/$(PKGROOT)
 
 clean::
 	rm -rf $(PACKAGENAME)-$(VERSION)
