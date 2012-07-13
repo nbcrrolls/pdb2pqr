@@ -22,7 +22,12 @@ html: predoc
 pdf: predoc
 	jw --backend pdf --dsl $(PWD)/rocks.dsl#print index.sgml
 
+
+pretar::
+	mkdir -p images
+
 build: html pdf
+	mkdir -p images
 
 install:: build
 	mkdir -p $(ROOT)/$(PKGROOT)/images

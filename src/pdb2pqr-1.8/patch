@@ -21,14 +21,17 @@ diff -rupN pdb2pqr-1.8/html/server.html.in pdb2pqr-fix/html/server.html.in
  <blockquote>
 diff -rupN pdb2pqr-1.8/main.py pdb2pqr-fix/main.py
 --- pdb2pqr-1.8/main.py	2012-01-24 11:15:10.000000000 -0800
-+++ pdb2pqr-fix/main.py	2012-07-12 11:29:01.485065794 -0700
-@@ -393,7 +393,8 @@ def runPDB2PQR(pdblist, ff,
++++ pdb2pqr-fix/main.py	2012-07-13 15:43:48.782315509 -0700
+@@ -393,8 +393,9 @@ def runPDB2PQR(pdblist, ff,
      # Process the extensions
      for ext in selectedExtensions:
          module = extensions.extDict[ext]
 -        tempRoutines = copy.deepcopy(myRoutines)
+-        module.run_extension(tempRoutines, outroot, extensionOptions)
 +        #this does not work for big molecule
 +        #tempRoutines = copy.deepcopy(myRoutines)
-         module.run_extension(tempRoutines, outroot, extensionOptions)
++        module.run_extension(myRoutines, outroot, extensionOptions)
  
      if verbose:
+         print "Total time taken: %.2f seconds\n" % (time.time() - start)
+
