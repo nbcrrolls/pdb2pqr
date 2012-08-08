@@ -17,4 +17,12 @@
         <package>pdb2pqr18</package>
         <package>rocks-pdb2pqr</package>
 
+<post>
+if [ -e /opt/pdb2pqr ] ; then
+   rm -rf /opt/pdb2pqr
+fi
+ln -s /opt/pdb2pqr_PDB2PQRVER/opt/pdb2pqr
+
+</post>
+
 </kickstart>
