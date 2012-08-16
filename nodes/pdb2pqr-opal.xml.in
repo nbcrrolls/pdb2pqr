@@ -49,6 +49,20 @@ if [ ! -d /var/tmp/pdb2pqr/tmp ]; then
 fi
 
 #
+# move tmp dir to opal job spooling dir
+# TODO not tested
+#
+ls /share/opal
+if [ -d /share/opal ]; then
+    mkdir /share/opal/pdb2pqr
+    mkdir /share/opal/pdb2pqr/tmp
+    chmod 777 /share/opal/pdb2pqr/tmp
+    rm -rf /var/tmp/pdb2pqr/tmp
+    ln -s /share/opal/pdb2pqr/tmp /var/tmp/pdb2pqr/tmp
+fi
+
+
+#
 # fix the hostname
 #
 tempname="rollhost"
