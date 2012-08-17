@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # number of days to keep old scratch directories
-n=4
+n=1
 
 # pdb2pqr jobs dir 
 jobsDir=/var/tmp/pdb2pqr/tmp
