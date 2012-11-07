@@ -87,13 +87,13 @@ if [ -d /opt/opal ]; then
 # pdb2pqr
 #
 VERSION=1.8
-pqb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
+pdb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
 if test -e $pdb2pqr_script; then
     $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
 fi
 
 VERSION=1.7.1a
-pqb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
+pdb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
 if test -e $pdb2pqr_script; then
     $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
 fi
