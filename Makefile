@@ -13,3 +13,9 @@ default:
 	done
 	$(MAKE) roll
 
+cvsclean:: clean
+	for i in `ls nodes/*.xml`; do \
+	    export o=`echo $$i | sed 's/\.in//'`; \
+	    rm -rf  $$o; \
+	done
+
