@@ -23,13 +23,13 @@ REDHAT.ROOT = $(PWD)/../../
 include Rules.mk
 
 version.mk:
-	cat version.mk.in ../version.mk > version.mk
+	cat version.mk.in ../version.mk ../pdb2pqr.mk > version.mk
 build::
 
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
-	$(INSTALL) -m 0644 pdb2pqr_1.8.xml $(ROOT)/$(PKGROOT)
-	$(INSTALL) -m 0644 pdb2pqr_1.7.1a.xml $(ROOT)/$(PKGROOT)
+	$(INSTALL) -m 0644 pdb2pqr_$(CURRENT).xml $(ROOT)/$(PKGROOT)
+	$(INSTALL) -m 0644 pdb2pqr_$(LAST).xml $(ROOT)/$(PKGROOT)
 	#need this for apache cgi setup
 	mkdir -p $(ROOT)/etc/httpd/conf.d
 	install -m 644 pdb2pqr.conf $(ROOT)/etc/httpd/conf.d

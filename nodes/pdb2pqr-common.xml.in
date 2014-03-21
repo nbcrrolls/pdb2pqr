@@ -13,7 +13,7 @@
 
         </changelog>
 
-        <package>pdb2pqr17</package>
+        <package>pdb2pqr19</package>
         <package>pdb2pqr18</package>
         <package>rocks-pdb2pqr</package>
 
@@ -21,7 +21,7 @@
 if [ -e /opt/pdb2pqr ] ; then
    rm -rf /opt/pdb2pqr
 fi
-ln -s /opt/pdb2pqr_PDB2PQRVER  /opt/pdb2pqr
+ln -s /opt/pdb2pqr_PDB2PQR_CURRENT  /opt/pdb2pqr
 
 </post>
 

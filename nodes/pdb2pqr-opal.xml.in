@@ -33,9 +33,9 @@ mkdir -p /var/www/html/pdb2pqr
 <html>
 <head>
 <title>Your Page Title</title>
-<meta http-equiv="REFRESH" content="0;url=/pdb2pqr_PDB2PQRVER/"></HEAD>
+<meta http-equiv="REFRESH" content="0;url=/pdb2pqr_PDB2PQR_CURRENT/"></HEAD>
 <BODY>
-Redirecting to latest pdb2pqr 1.8...
+Redirecting to latest pdb2pqr version PDB2PQR_CURRENT ...
 </BODY>
 </HTML>
 ]]>
@@ -86,13 +86,13 @@ if [ -d /opt/opal ]; then
 #
 # pdb2pqr
 #
-VERSION=1.8
+VERSION=PDB2PQR_CURRENT
 pdb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
 if test -e $pdb2pqr_script; then
     $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
 fi
 
-VERSION=1.7.1a
+VERSION=PDB2PQR_LAST
 pdb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
 if test -e $pdb2pqr_script; then
     $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml

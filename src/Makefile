@@ -54,8 +54,6 @@
 
 
 SRCDIRS = `find . -maxdepth 1 -type d -not -name CVS -not -name .svn -not -name .`
-#SRCDIRS =  opal-pdb2pqr  pdb2pqr  rocks-pdb2pqr  
-
 
 default:	rpm
 
