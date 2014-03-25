@@ -19,20 +19,23 @@ build:
 	(                                                                       \
 		cd $(PACKAGENAME)-$(VERSION);                                   \
 		$(PYTHONROLL) scons/scons.py                                    \
-			PREFIX=$(ROOT)/$(PKGROOT)                               \
+			PREFIX=$(PKGROOT)                               \
 			URL=http://rollhost/pdb2pqr_$(VERSION)/                 \
 			APBS=/opt/apbs/bin/apbs                                 \
 			OPAL=http://rollhost/opal2/services/pdb2pqr_$(VERSION)  \
-			APBS_OPAL=http://rollhost/opal2/services/apbs_$(APBS)   \
-		$(PYTHONROLL) scons/scons.py test                               \
-		$(PYTHONROLL) scons/scons.py advtest                            \
+			APBS_OPAL=http://rollhost/opal2/services/apbs_$(APBS);  \
+		cp src/aconf.py src/aconf.py.save                       \
         )
+		#$(PYTHONROLL) scons/scons.py test;                              \
+		#$(PYTHONROLL) scons/scons.py advtest;                           \
 
 install::
-	mkdir -p $(ROOT)/$(PKGROOT)
+	mkdir -p $(ROOT)/$(PKGROOT)/src
 	(                                                                       \
 		cd $(PACKAGENAME)-$(VERSION);                                   \
-		$(PYTHONROLL) scons/scons.py install PREFIX=$(ROOT)/$(PKGROOT)  \
+		$(PYTHONROLL) scons/scons.py install PREFIX=$(ROOT)/$(PKGROOT); \
+		cp src/aconf.py.save $(ROOT)/$(PKGROOT)/src/aconf.py;           \
+		rm -f  src/aconf.py?;                                           \
 	)
 
 	mkdir -p $(ROOT)/var/www/html
