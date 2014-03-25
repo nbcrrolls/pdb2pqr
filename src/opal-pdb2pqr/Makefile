@@ -23,7 +23,7 @@ REDHAT.ROOT = $(PWD)/../../
 include Rules.mk
 
 version.mk:
-	cat version.mk.in ../version.mk ../pdb2pqr.mk > version.mk
+	cat version.mk.in ../version.mk ../../pdb2pqr.mk > version.mk
 build::
 
 install::

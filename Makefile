@@ -4,7 +4,7 @@
 
 -include $(ROLLSROOT)/etc/Rolls.mk
 include Rolls.mk
-include src/pdb2pqr.mk
+include pdb2pqr.mk
 
 default: 
 	for i in `ls nodes/*.xml.in`; do \
@@ -13,7 +13,7 @@ default:
 	    sed -i "s/PDB2PQR_CURRENT/$(CURRENT)/g" $$o; \
 	    sed -i "s/PDB2PQR_LAST/$(LAST)/g" $$o; \
 	done
-	#$(MAKE) roll
+	$(MAKE) roll
 
 cvsclean:: clean
 	for i in `ls nodes/*.xml`; do \
