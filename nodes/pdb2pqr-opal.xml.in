@@ -41,24 +41,27 @@ Redirecting to latest pdb2pqr version PDB2PQR_CURRENT ...
 ]]>
 </file>
 
-
-
-if [ ! -d /var/tmp/pdb2pqr/tmp ]; then
-    mkdir -p /var/tmp/pdb2pqr/tmp
-    chmod 777 /var/tmp/pdb2pqr/tmp
-fi
-
 #
 # move tmp dir to opal job spooling dir
-# TODO not tested
 #
+
+rm -rf /opt/pdb2pqr_PDB2PQR_CURRENT/tmp
+rm -rf /opt/pdb2pqr_PDB2PQR_LAST/tmp
+
 ls /share/opal
 if [ -d /share/opal ]; then
     mkdir /share/opal/pdb2pqr
     mkdir /share/opal/pdb2pqr/tmp
     chmod 777 /share/opal/pdb2pqr/tmp
-    rm -rf /var/tmp/pdb2pqr/tmp
-    ln -s /share/opal/pdb2pqr/tmp /var/tmp/pdb2pqr/tmp
+    ln -s /share/opal/pdb2pqr/tmp /opt/pdb2pqr_PDB2PQR_CURRENT/tmp
+    ln -s /share/opal/pdb2pqr/tmp /opt/pdb2pqr_PDB2PQR_LAST/tmp
+else
+    if [ ! -d /var/tmp/pdb2pqr/tmp ]; then
+        mkdir -p /var/tmp/pdb2pqr/tmp
+        chmod 777 /var/tmp/pdb2pqr/tmp
+    fi
+    ln -s /var/tmp/pdb2pqr/tmp /opt/pdb2pqr_PDB2PQR_CURRENT/tmp
+    ln -s /var/tmp/pdb2pqr/tmp /opt/pdb2pqr_PDB2PQR_LAST/tmp
 fi
 
 
