@@ -4,7 +4,8 @@
 n=1
 
 # pdb2pqr jobs dir 
-jobsDir=/var/tmp/pdb2pqr/tmp
+jobsDir=/opt/pdb2pqr/tmp
+
 echo "Removing pdb2pqr jobs directories older then $n days from $jobsDir"
 
 cd $jobsDir/
