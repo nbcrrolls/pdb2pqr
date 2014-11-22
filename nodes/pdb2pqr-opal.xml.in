@@ -80,30 +80,6 @@ for i in $change_list; do \
   sed -i "s/$tempname/$SERVER_NAME/g" $i; \
 done
 
-
-#
-# deploy opal services
-#
-if [ -d /opt/opal ]; then
-<file name="/opt/opal/deployed/deploy.sh" mode="append">
-#
-# pdb2pqr
-#
-VERSION=PDB2PQR_CURRENT
-pdb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
-if test -e $pdb2pqr_script; then
-    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
-fi
-
-VERSION=PDB2PQR_LAST
-pdb2pqr_script=/opt/pdb2pqr_$VERSION/pdb2pqr.py
-if test -e $pdb2pqr_script; then
-    $ANT -f $OPALXML deploy -DserviceName=pdb2pqr_$VERSION -DappConfig=$OPALCONFIG/pdb2pqr_$VERSION.xml
-fi
-
-</file>
-fi
-
 </post>
 </kickstart>
 

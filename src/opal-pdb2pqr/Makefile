@@ -16,7 +16,7 @@
 #
 #
 
-PKGROOT = /opt/opal/deployed
+PKGROOT = /opt/tomcat/deployed
 
 REDHAT.ROOT = $(PWD)/../../
 -include $(ROCKSROOT)/etc/Rules.mk
