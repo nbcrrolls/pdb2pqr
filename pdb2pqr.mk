@@ -1,2 +1,2 @@
-CURRENT = 1.9.0
-LAST = 1.8
+CURRENT = 2.0.0
+LAST = 1.9.0

@@ -1,0 +1,26 @@
+# build directory
+RPMS/
+SRPMS/
+SOURCES/
+BUILD/
+disk1/
+SPECS/
+
+_os
+_arch
+_distribution
+.rpmmacros
+python.mk
+
+# ignore version* files
+rocks-version.mk
+rocks-version-common.mk
+
+# ignore roll mk files
+Rules*
+Rolls*
+roll-*
+
+# ignore created nodes files
+nodes/pdb2pqr-*.xml
+

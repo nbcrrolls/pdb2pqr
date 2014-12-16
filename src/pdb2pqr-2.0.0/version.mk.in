@@ -1,0 +1,8 @@
+PACKAGENAME = pdb2pqr
+NAME        = pdb2pqr20
+VERSION     = 2.0.0
+APBS        = 1.3
+
+DISTRO      = pdb2pqr_2.0.0_src_plus_apbs_lib.tgz
+
+RPM.EXTRAS += "AutoReq: no"
