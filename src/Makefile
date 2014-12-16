@@ -53,7 +53,7 @@
 #
 
 
-SRCDIRS = `find . -maxdepth 1 -type d -not -name CVS -not -name .svn -not -name .`
+SRCDIRS = `find . -maxdepth 1 -type d -not -name CVS -not -name .svn -not -name . -not -name pdb2pqr-1.8`
 
 default:	rpm
 
