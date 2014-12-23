@@ -1,4 +1,4 @@
-PACKAGENAME = pdb2pqr
+PACKAGENAME = pdb2pqr-src
 NAME        = pdb2pqr20
 VERSION     = 2.0.0
 APBS        = 1.3

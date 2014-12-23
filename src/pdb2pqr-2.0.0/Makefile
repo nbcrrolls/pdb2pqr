@@ -21,18 +21,22 @@ version.mk:
 
 build: 
 	tar zxvf $(PACKAGENAME)-$(VERSION).tar.gz
+	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
 	(                                                                       \
 		cd $(PACKAGENAME)-$(VERSION);                                   \
+		module load opt-python;                                         \
 		$(PYTHONROLL) scons/scons.py                                    \
-			PREFIX=$(PKGROOT)                               \
+			PREFIX=$(PKGROOT)                                       \
 			URL=http://rollhost/pdb2pqr_$(VERSION)/                 \
 			APBS=/opt/apbs/bin/apbs                                 \
 			OPAL=http://rollhost/opal2/services/pdb2pqr_$(VERSION)  \
 			APBS_OPAL=http://rollhost/opal2/services/apbs_$(APBS);  \
-		cp src/aconf.py src/aconf.py.save                       \
-		$(PYTHONROLL) scons/scons.py test;                              \
-		$(PYTHONROLL) scons/scons.py advtest;                           \
-        )
+		cp src/aconf.py src/aconf.py.save;                              \
+		$(PYTHONROLL) scons/scons.py basic-test;                        \
+		$(PYTHONROLL) scons/scons.py -j8 complete-test;                     \
+		$(PYTHONROLL) scons/scons.py pdb2pka-test;                      \
+	)
+		#$(PYTHONROLL) scons/scons.py msvs;                              \
 
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)/src
@@ -42,7 +46,6 @@ install::
 		cp src/aconf.py.save $(ROOT)/$(PKGROOT)/src/aconf.py;           \
 		rm -f  src/aconf.py?;                                           \
 	)
-
 	mkdir -p $(ROOT)/var/www/html
 	ln -s $(PKGROOT) $(ROOT)/var/www/html/pdb2pqr_$(VERSION)
 
