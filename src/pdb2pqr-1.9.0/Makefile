@@ -16,6 +16,7 @@ version.mk:
 
 build: 
 	tar zxvf $(PACKAGENAME)-$(VERSION).tar.gz
+	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
 	(                                                                       \
 		cd $(PACKAGENAME)-$(VERSION);                                   \
 		$(PYTHONROLL) scons/scons.py                                    \
@@ -25,9 +26,9 @@ build:
 			OPAL=http://rollhost/opal2/services/pdb2pqr_$(VERSION)  \
 			APBS_OPAL=http://rollhost/opal2/services/apbs_$(APBS);  \
 		cp src/aconf.py src/aconf.py.save                       \
+		$(PYTHONROLL) scons/scons.py test;                              \
+		$(PYTHONROLL) scons/scons.py advtest;                           \
         )
-		#$(PYTHONROLL) scons/scons.py test;                              \
-		#$(PYTHONROLL) scons/scons.py advtest;                           \
 
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)/src
