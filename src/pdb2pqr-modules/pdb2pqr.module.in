@@ -1,0 +1,21 @@
+#%Module1.0
+##
+## pdb2pqr modulefile
+##
+## modulefiles/
+##
+proc ModulesHelp { } {
+ global pdb2pqrversion 
+
+ puts stderr "\tUse pdb2pqr from /opt/pdb2pqr_@VERSION@"
+ puts stderr "\tPDB2PQR Version $pdb2pqrversion"
+}
+
+module-whatis   "PDB2PQR Version @VERSION@"
+
+# for Tcl script use only
+set     pdb2pqrversion @VERSION@
+
+set pdb2pqrHome /opt/pdb2pqr_@VERSION@
+setenv PDB2PQR_HOME $pdb2pqrHome
+prepend-path    PATH $pdb2pqrHome
