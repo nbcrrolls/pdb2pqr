@@ -12,6 +12,11 @@ software plus precompid apbs libraries ``./pdb2pka/_apbslib.so``
 
 Requirements
 --------------
+Download networkx :: 
+
+    https://pypi.python.org/packages/source/n/networkx/networkx-1.10.tar.gz
+    https://pypi.python.org/packages/source/d/decorator/decorator-4.0.4.tar.gz
+
 Execute ``bootstrap.sh`` to create v.20.0.0 distro tar.gz file. 
 pdb2pqr-2.0.0.tar.gz
 

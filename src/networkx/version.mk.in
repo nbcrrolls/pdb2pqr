@@ -1,0 +1,5 @@
+NAME = pdb2pqr-networkx
+VERSION = 1.10
+ARCHIVENAME = networkx
+RELEASE = 0
+PYTHONVER = python2.7

@@ -13,8 +13,10 @@
 
         </changelog>
 
+        <package>pdb2pqr21</package>
         <package>pdb2pqr20</package>
-        <package>pdb2pqr19</package>
+        <package>pdb2pqr-decorator</package>
+        <package>pdb2pqr-networkx</package>
         <package>rocks-pdb2pqr</package>
 
 <post>

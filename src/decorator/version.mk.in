@@ -1,0 +1,5 @@
+NAME = pdb2pqr-decorator
+VERSION = 4.0.4
+ARCHIVENAME = decorator
+RELEASE = 0
+PYTHONVER = python2.7

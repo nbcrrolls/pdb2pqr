@@ -1,0 +1,6 @@
+PACKAGENAME = pdb2pqr-src
+NAME        = pdb2pqr21
+VERSION     = 2.1.0
+APBS        = 1.3
+
+RPM.EXTRAS += "AutoReq: no"
