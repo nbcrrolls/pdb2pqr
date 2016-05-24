@@ -2,8 +2,8 @@
            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata appName="PDB2PQR 2.0.0">
     <usage><![CDATA[PDB2PQR is a Python software package that automates many of the common tasks of preparing structures for continuum electrostatics calculations, providing a platform-independent utility for converting protein files in PDB format to PQR format. Version 2.0.0
-<BR><A HREF=http://www.nbcr.net/ws_help/PDB2PQR/>
-Tutorial: http://www.nbcr.net/ws_help/PDB2PQR/
+<BR><A HREF=http://nbcr.ucsd.edu/data/docs/wshelp/PDB2PQR/>
+Tutorial: http://nbcr.ucsd.edu/data/docs/wshelp/PDB2PQR/
 </A>
 ]]></usage>
     <info xsd:type="xsd:string">
