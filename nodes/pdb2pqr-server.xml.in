@@ -10,7 +10,6 @@
         </copyright>
 
         <changelog>
-
         </changelog>
 
         <package>roll-pdb2pqr-usersguide</package>
@@ -18,7 +17,12 @@
 <post>
 
 tempname="rollhost"
-realname=&Kickstart_PublicHostname;
+realname="&opal_public_fqdn;"
+if [ "$realname" == "" ] ; then
+    #if this is a frontend installation the
+    #opal_public_fqdn is not set yet
+    realname="&Kickstart_PublicHostname;"
+fi
 
 change_list2=`grep -r -l $tempname /var/www/html/roll-documentation/pdb2pqr`
 for i in $change_list2; do \
