@@ -10,7 +10,6 @@
         </copyright>
 
         <changelog>
-
         </changelog>
 
         <package>pdb2pqr-opal</package>
@@ -18,11 +17,7 @@
 
 <post>
 
-
-
-#
-# fix pdb2pqr web site directories
-#
+### fix pdb2pqr web site directories
 if [ -e /var/www/html/pdb2pqr ] ; then
    rm -rf /var/www/html/pdb2pqr
 fi
@@ -41,10 +36,20 @@ Redirecting to latest pdb2pqr version PDB2PQR_CURRENT ...
 ]]>
 </file>
 
-#
-# move tmp dir to opal job spooling dir
-#
+### fix the hostname
+tempname="rollhost"
+SERVER_NAME="&opal_public_fqdn;"
+if [ "$SERVER_NAME" == "" ] ; then
+        #if this is a frontend installation the
+        #opal_public_fqdn is not set yet
+        SERVER_NAME="&Kickstart_PublicHostname;"
+fi
+change_list=`grep -r -l $tempname /opt/pdb2pqr_*`
+for i in $change_list; do \
+  sed -i "s/$tempname/$SERVER_NAME/g" $i; \
+done
 
+### move tmp dir to opal job spooling dir
 rm -rf /opt/pdb2pqr_PDB2PQR_CURRENT/tmp
 rm -rf /opt/pdb2pqr_PDB2PQR_LAST/tmp
 
@@ -63,22 +68,6 @@ else
     ln -s /var/tmp/pdb2pqr/tmp /opt/pdb2pqr_PDB2PQR_CURRENT/tmp
     ln -s /var/tmp/pdb2pqr/tmp /opt/pdb2pqr_PDB2PQR_LAST/tmp
 fi
-
-
-#
-# fix the hostname
-#
-tempname="rollhost"
-SERVER_NAME="&opal_public_fqdn;"
-if [ "$SERVER_NAME" == "" ] ; then
-        #if this is a frontend installation the
-        #opal_public_fqdn is not set yet
-        SERVER_NAME="&Kickstart_PublicHostname;"
-fi
-change_list=`grep -r -l $tempname /opt/pdb2pqr_*`
-for i in $change_list; do \
-  sed -i "s/$tempname/$SERVER_NAME/g" $i; \
-done
 
 </post>
 </kickstart>
